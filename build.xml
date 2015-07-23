@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="antQs" basedir="." default="">
+	<property name="src" value="src"/>
+	<property name="classes" value="WebContent\WEB-INF\classes"/>
+	<property name="lib" value="lib"/>
+	<property name="dest" value="dest"/>
+	<path id="classpath">
+		<pathelement path="${classes}"/>
+	</path>	
+	<!-- 缂栬瘧java绋嬪簭鐢ㄥ埌鐨勭涓夋柟鍖呮墍鍦ㄧ殑鐩綍 -->
+	<path id="trdPartyLib">
+		 <fileset dir="D:\tempworking\tomcat\lib">  
+		      <include name="*.jar" />
+		 </fileset>
+		<fileset dir="WebContent\WEB-INF\lib">  
+			  <include name="*.jar" />
+		</fileset>
+	</path>	
+	<target name="help" description="锟斤拷印锟斤拷锟斤拷锟斤拷息">
+		<echo>help - 锟斤拷印锟斤拷锟斤拷锟斤拷息</echo>
+		<echo>compile - 锟斤拷锟斤拷Java源锟侥硷拷</echo>
+		<echo>run - 锟斤拷锟叫筹拷锟斤拷</echo>
+		<echo>build - 锟斤拷锟絁AR锟斤拷</echo>
+		<echo>clean - 锟斤拷锟斤拷锟斤拷斜锟斤拷锟斤拷锟缴碉拷锟侥硷拷</echo>
+	</target>
+	<target name="compile" description="锟斤拷锟斤拷Java源锟侥硷拷">
+		<delete dir="${classes}"/>
+		<mkdir dir="${classes}"/>
+		<javac destdir="${classes}" debug="true" includeantruntime="yes"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${src}"/>
+			<classpath refid="trdPartyLib"/>
+		</javac>
+	</target>
+	<target name="run" description="锟斤拷锟叫筹拷锟斤拷" depends="compile">
+		<java classname="lee.HelloTest" fork="yes" failonerror="true">
+			<classpath refid="classpath"/>
+			<arg line="锟斤拷锟皆诧拷锟斤拷1 锟斤拷锟皆诧拷锟斤拷2"/>
+		</java>
+	</target>
+	<target name="build" description="锟斤拷锟絁AR锟侥硷拷" depends="compile">
+		<delete dir="${dest}"/>
+		<mkdir dir="${dest}"/>
+		<jar destfile="${dest}/app.jar" basedir="${classes}"
+			includes="**/*.class">
+			<manifest>
+				<attribute name="Main-Class" value="lee.HelloTest"/>
+			</manifest>
+		</jar>
+	</target>
+	<target name="clean" description="锟斤拷锟斤拷锟斤拷斜锟斤拷锟斤拷锟缴碉拷锟侥硷拷">
+		<delete dir="${classes}"/>
+		<delete dir="${dest}"/>
+	</target>
+</project>

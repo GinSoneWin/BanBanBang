@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Parameters>
+	<parameter-name>phone</parameter-name>
+	<parameter-name>passwd</parameter-name>
+	<parameter-name>nickname</parameter-name>
+	<parameter-name>sex</parameter-name>
+	<parameter-name>place</parameter-name>
+	<parameter-name>age</parameter-name>
+</Parameters>
