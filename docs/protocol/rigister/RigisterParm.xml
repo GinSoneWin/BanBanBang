@@ -10,7 +10,7 @@
 	<parameter-type>String</parameter-type>
 
 	<parameter-name>place</parameter-name>
-	<parameter-type>String,"国家-省-市-县（区）"</parameter-type>
+	<parameter-type>String,"省-市-县（区）"</parameter-type>
 	
 	<parameter-name>birthday</parameter-name>
 	<parameter-type>String,"YYYY-MM-DD"</parameter-type>
