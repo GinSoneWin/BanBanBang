@@ -1,0 +1,17 @@
+<Parameter>
+	<parameter_key>result</parameter_key>
+	<parameter_value>	//每一种case代表一种情况，result返回的值有可能是0，-1，-2
+			<case>
+				<code>0</code>
+				<info>success</info>
+			</case>
+			<case>
+				<code>-1</code>
+				<info>fail:phone number has been used</info>
+			</case>
+			<case>
+				<code>-2</code>
+				<info>fail:server exception</info>
+			</case>
+	</parameter_value>
+</Parameter>
