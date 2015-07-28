@@ -1,0 +1,32 @@
+<Parameters>
+	<Parameter>
+		<parameter-key>phone</parameter-key>
+		<parameter-type>String</parameter-type>
+	</Parameter>
+
+	<Parameter>
+		<parameter-key>sex</parameter-key>
+		<parameter-type>String, "m" or "f"</parameter-type>
+	</Parameter>
+
+	<Parameter>
+		<parameter-key> passwd</parameter-key>
+		<parameter-type>String</parameter-type>
+	</Parameter>
+
+	<Parameter>
+		<parameter-key> place</parameter-key>
+		<parameter-type>String,"省-市-县（区）"</parameter-type>
+	</Parameter>
+
+	<Parameter>
+		<parameter-key>birthday</parameter-key>
+		<parameter-type>String,"YYYY-MM-DD"</parameter-type>
+	</Parameter>
+
+	<Parameter>
+		<parameter-key>nickname</parameter-key>
+		<parameter-type>String</parameter-type>
+	</Parameter>
+</Parameters>
+
