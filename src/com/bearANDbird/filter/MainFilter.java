@@ -43,6 +43,7 @@ public class MainFilter implements Filter {
 		// pass the request along the filter chain
 		HttpServletRequest hrequest = (HttpServletRequest)request;
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("utf-8");
 		chain.doFilter(request, response);
 	}
 

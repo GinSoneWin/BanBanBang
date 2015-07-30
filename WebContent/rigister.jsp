@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="rigiterPro">
-		username:<input type="text" name="username"><br/>
+	<form method="post" action="rigisterPro">
+		nickname:<input type="text" name="nickname"><br/>
 		password:<input type="password" name="passwd"><br/>
 		gender:&nbsp;&nbsp;&nbsp;&nbsp;男<input type="radio" name="gender" value="male">
 			         女<input type="radio" name="gender" value="female"><br/>

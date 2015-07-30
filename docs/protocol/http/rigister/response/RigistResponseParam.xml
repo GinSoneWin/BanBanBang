@@ -11,6 +11,10 @@
 			</case>
 			<case>
 				<code>-2</code>
+				<info>fail:rigist error</info>
+			</case>
+			<case>
+				<code>-3</code>
 				<info>fail:server exception</info>
 			</case>
 	</parameter_value>
