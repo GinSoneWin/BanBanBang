@@ -1,0 +1,9 @@
+帧头(int)		类型(byte)	子类型(byte)	消息类型(byte)		消息长度(int)		消息体(byte[])
+//登录
+108228		0			2			0				byte[].length	{"result":"0"}	登录成功
+108228		0			2			0				byte[].length	{"result":"-1"} 用户名或密码错误
+108228		0			2			0				byte[].length	{"result":"-2"} 服务器错误
+
+//登出
+108228		0			3			0				byte[].length	{"result":"0"}	登出成功
+108228		0			3			0				byte[].length	{"result":"-1"}	服务器错误

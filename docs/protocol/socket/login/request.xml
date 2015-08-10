@@ -1,0 +1,3 @@
+帧头(int)		类型(byte)	子类型(byte)	消息类型(byte)		消息长度(int)		消息体(byte[])
+108228		0			0			0				byte[].length	{"account":value,"passwd":value}.getBytes()	登录
+108228		0			1			0				0				null										登出
