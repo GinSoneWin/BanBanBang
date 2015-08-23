@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<url>webappcontext/loginPro</url>
+
+
+
+<parameters>
+	<parameter>
+		<parameter-key>phone</parameter-key>
+		<parameter-type>String</parameter-type>
+	</parameter>
+	<parameter>
+		<parameter-key>password</parameter-key>
+		<parameter-type>String</parameter-type>
+	</parameter>
+</parameters>
