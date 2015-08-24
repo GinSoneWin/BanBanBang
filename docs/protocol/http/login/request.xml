@@ -10,7 +10,7 @@
 		<parameter-type>String</parameter-type>
 	</parameter>
 	<parameter>
-		<parameter-key>password</parameter-key>
+		<parameter-key>passwd</parameter-key>
 		<parameter-type>String</parameter-type>
 	</parameter>
 </parameters>
