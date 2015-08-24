@@ -13,5 +13,9 @@
 				<code>-2</code>
 				<info>fail:server exception</info>
 			</case>
+			<case>
+				<code>-3</code>
+				<info>fail:user not exist</info>
+			</case>
 	</parameter_value>
 </Parameter>
