@@ -1,37 +1,23 @@
 
-<url>webappcontext/rigisterPro</url>
-
-
-
-<Parameters>
-	<Parameter>
-		<parameter-key>phone</parameter-key>
-		<parameter-type>String</parameter-type>
-	</Parameter>
-
-	<Parameter>
-		<parameter-key>sex</parameter-key>
-		<parameter-type>String, "m" or "f"</parameter-type>
-	</Parameter>
-
-	<Parameter>
-		<parameter-key> passwd</parameter-key>
-		<parameter-type>String</parameter-type>
-	</Parameter>
-
-	<Parameter>
-		<parameter-key> place</parameter-key>
-		<parameter-type>String,"省-市-县（区）"</parameter-type>
-	</Parameter>
-
-	<Parameter>
-		<parameter-key>birthday</parameter-key>
-		<parameter-type>String,"YYYY-MM-DD"</parameter-type>
-	</Parameter>
-
-	<Parameter>
-		<parameter-key>nickname</parameter-key>
-		<parameter-type>String</parameter-type>
-	</Parameter>
-</Parameters>
-
+<http-request>
+	<http-url>
+		webappcontext/rigisterPro
+	</http-url>
+	<http-heders>
+		<signature mode="encrypted in pbkdf2" type="string">pbkdf2{(timestamp+phone+password(pbkdf2)+httpcontentJsonString),headerSalt}</signature>
+	</http-heders>
+	<http-content  type="json string" mode="transparent">
+		<timestamp type="string" mode="transparent">time</timestamp>
+		<secretData mode="encrypted in aes" type="json string">
+			<phone type="String" mode="transparent"/>
+			<sex type="String" mode="transparent"/> 
+			<sex type="String" mode="transparent"/> 
+			<place type="String" mode="transparent"/> 
+			<birthday type="String" mode="transparent" format="YYYY-MM-DD"/> 
+			<nickname type="String" mode="transparent"/> 
+			<userKey type="String" mode="encrypted in rsa"/> 
+			<headerSalt type="String" mode="transparent"/> 
+		</secretData>
+		<key type="string" mode="encrypted in rsa" >user aes secret key</key>
+	</http-content>
+</http-request>

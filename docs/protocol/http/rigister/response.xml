@@ -1,21 +1,27 @@
-<Parameter>
-	<parameter_key>result</parameter_key>
-	<parameter_value>	//每一种case代表一种情况，result返回的值有可能是0，-1，-2
-			<case>
-				<code>0</code>
-				<info>success</info>
-			</case>
-			<case>
-				<code>-1</code>
-				<info>fail:phone number has been used</info>
-			</case>
-			<case>
-				<code>-2</code>
-				<info>fail:rigist error</info>
-			</case>
-			<case>
-				<code>-3</code>
-				<info>fail:server exception</info>
-			</case>
-	</parameter_value>
-</Parameter>
+<http-response>
+	<http-header>
+		<signature mode="encrypted in pbkdf2" type="String">pbkdf2{(timestamp+token+httpcontentJsonString),headerSalt}
+		</signature>
+	</http-header>
+	<http-content mode="transparent" type="json String">
+		<timestamp mode="transparent" type="string">String.valueOf(System.currentTimeMillis())</timestamp>
+		<secretData mode="encrypted in aes" type="json string">
+			<result mode="transparent" type="String">
+				<case value="0" info="success"/>
+				<case value="-1" info="fail:phone number has been used"/>
+				<case value="-2" info="fail:rigist error"/>
+				<case value="-3" info="fail:server exception"/>
+			</result>
+			<token mode="transparent" type="String">
+				<case value="token generated from server" info="get token if rigist success" />
+				<case value="" info="get empty string (not null) if rigist fail "/>
+			</token>
+			<userid>
+				<case value="userid generated from server" info="get userid if rigist success"/>
+				<case value="" info="get empty string (not null) if rigist fail"/>
+			</userid>
+			<headerSalt mode="transparent" type="String"/>
+		</secretData>
+	</http-content>
+</http-response>
+
