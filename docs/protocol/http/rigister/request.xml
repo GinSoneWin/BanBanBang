@@ -10,7 +10,7 @@
 		<timestamp type="string" mode="transparent">time</timestamp>
 		<secretData mode="encrypted in aes" type="json string">
 			<phone type="String" mode="transparent"/>
-			<sex type="String" mode="transparent"/> 
+			<passwd type="String" mode="encrypted in pbkdf2"/> 
 			<sex type="String" mode="transparent"/> 
 			<place type="String" mode="transparent"/> 
 			<birthday type="String" mode="transparent" format="YYYY-MM-DD"/> 
