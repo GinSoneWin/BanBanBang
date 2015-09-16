@@ -4,13 +4,20 @@
 
 
 
-<parameters>
-	<parameter>
-		<parameter-key>phone</parameter-key>
-		<parameter-type>String</parameter-type>
-	</parameter>
-	<parameter>
-		<parameter-key>passwd</parameter-key>
-		<parameter-type>String</parameter-type>
-	</parameter>
-</parameters>
+
+<http-request>
+	<http-url>webappcontext/loginPro</http-url>
+	<http-header>
+		<signature mode="encrypted in pbkdf2" type="string">pbkdf2{(timestamp+phone+passwd+httpcontentJsonString),headerSalt}
+		</signature>
+	</http-header>
+	<http-content>
+		<timestamp type="string" mode="transparent">time</timestamp>
+		<secretData type="json string" mode="encrypted in aes">
+			<phone type="String" mode="transparent" />
+			<passwd type="String" mode="transparent" />
+			<headerSalt type="String" mode="transparent" />
+		</secretData>
+		<key type="string" mode="encrypted in rsa"/>
+	</http-content>
+</http-request>

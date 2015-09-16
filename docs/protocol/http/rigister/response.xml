@@ -1,6 +1,6 @@
 <http-response>
 	<http-header>
-		<signature mode="encrypted in pbkdf2" type="String">pbkdf2{(timestamp+token+httpcontentJsonString),headerSalt}
+		<signature mode="encrypted in pbkdf2" type="String">pbkdf2{(timestamp+phone+passwd(same as client)+httpcontentJsonString),headerSalt}
 		</signature>
 	</http-header>
 	<http-content mode="transparent" type="json String">
@@ -16,7 +16,7 @@
 				<case value="token generated from server" info="get token if rigist success" />
 				<case value="" info="get empty string (not null) if rigist fail "/>
 			</token>
-			<userid>
+			<userid mode="transparent" type="String">
 				<case value="userid generated from server" info="get userid if rigist success"/>
 				<case value="" info="get empty string (not null) if rigist fail"/>
 			</userid>
