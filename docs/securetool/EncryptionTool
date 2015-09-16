@@ -5,7 +5,7 @@ SecretKey secretKey = AESEncryptionTool.getSecretKey();
 2.如何把aes密钥发送给服务器端:
 		首先先随机生成一个aes密钥,然后再获取该密钥对应的ascii字符串:
 		SecretKey secretKey = AESEncryptionTool.getSecretKey();
-		String secretKeyStr = AESEncryptionTool.bcd2Str(secretKey.getEncoded());	//该字符串安全保存在本地
+		String secretKeyStr = AESEncryptionTool.getKeyAscStr(secretKey);	//该字符串安全保存在本地
 		然后把该字符串用rsa公钥加密:
 		String encryptedContent = RsaEncryptionTool.encryptByPublicKey(content, publicKey);
 		
