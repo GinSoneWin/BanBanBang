@@ -1,0 +1,33 @@
+1.如何随机生成一个aes密钥?
+SecretKey secretKey = AESEncryptionTool.getSecretKey();
+
+
+2.如何把aes密钥发送给服务器端:
+		首先先随机生成一个aes密钥,然后再获取该密钥对应的ascii字符串:
+		SecretKey secretKey = AESEncryptionTool.getSecretKey();
+		String secretKeyStr = AESEncryptionTool.bcd2Str(secretKey.getEncoded());	//该字符串安全保存在本地
+		然后把该字符串用rsa公钥加密:
+		String encryptedContent = RsaEncryptionTool.encryptByPublicKey(content, publicKey);
+		
+3.如何用aes密钥加密数据?
+		如果本地已经生成了aes密钥字符串:
+		SecretKey secretKey = AESEncryptionTool.getSecretKey(String secretKeyStr);
+		用该aes密钥加密数据:
+		String encryptedContent = AESEncryptionTool.encrypt(String content ,SecretKey secretKey);
+		或者直接用密钥字符串:
+		String encryptedContent = AESEncryptionTool.encrypt(String content ,String secretKeyStr);
+		
+3.如何获取rsa公钥?
+		应用内预先保存两个关于公钥的参数字符串,一个是模式modulus,一个是指数exponent,调用如下接口生成rsa公钥:
+		RSAPublicKey publicKey = RsaEncryptionTool.getPublicKey(String modulus,String exponent);
+		用rsa公钥加密内容:
+		String encryptedContent = RsaEncryptionTool.encryptByPublicKey(content, publicKey);
+4.如何生成pbkdf2签名?
+		pbkdf2是一种不可逆算法,它把一个原始字符串通过特定的哈希函数生成一个新的字符串,但是不可以通过新字符串直接计算出原始字符串的内容,该算法需要指定一个salt值
+		
+		随机生成一个salt值:
+		String headerSalt = Pbkdf2SinatureTool.getSaltStr();
+		生成消息签名:
+		String signature = PbPbkdf2SignatureTool.makeSignatureHelper(String content, String salt);
+		
+		
