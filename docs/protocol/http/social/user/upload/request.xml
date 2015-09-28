@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<http-request>
+	<http-url>
+		webappcontext/user/social/personal/uploadPic
+	</http-url>
+	<http-headers>
+		<jsonSignature mode="encrypted in pbkdf2" type="string">pbkdf2{(timestamp+userid+token+requestJson+fileBytes),headerSalt}</jsonSignature>
+		<fileName mode="encrypted in pbkdf2" type="string" >pbkdf2{(timestamp+userid+token+fileBytes),headerSalt}</fileName>
+	</http-headers>
+	<http-content>
+		<requestJson mode="transparent" type="string">
+			<timestamp mode="transparent" type="string"/>
+			<secretData mode="encrypted in aes" type="json string">
+				<token mode="transparent" type="string"/>
+				<headerSalt mode="transparent" type="string"/>
+			</secretData>
+			<userid mode="transparent" type="string"/>
+		</requestJson>
+		<fileName mode="encrypted in aes" type="byte[]"/>
+	</http-content>
+	
+</http-request>
