@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<http-request>
+	<http-url>
+		webappcontext/user/social/group/creategroup
+	</http-url>
+	<http-headers>
+		<signature mode="encrypted in pbkdf2" type="string">pbkdf2{(timestamp+userid+token+)}</signature>
+	</http-headers>
+	
+</http-request>
