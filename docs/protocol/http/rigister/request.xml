@@ -4,19 +4,27 @@
 		webappcontext/rigisterPro
 	</http-url>
 	<http-headers>
-		<signature mode="encrypted in pbkdf2" type="string">pbkdf2{(timestamp+phone+passwd+httpcontentJsonString),headerSalt}</signature>
+		<jsonSignature mode="encrypted in pbkdf2" type="string">
+			pbkdf2{(timestamp+phone+passwd+httpcontentJsonString),headerSalt}
+		</jsonSignature>
+		<fileName mode="encrypted in pbkdf2 type=" string ">
+			pbkdf2{(timestamp+phone+passwd+fileBytes),headerSalt}
+		</fileName>
 	</http-headers>
-	<http-content  type="json string" mode="transparent">
-		<timestamp type="string" mode="transparent">time</timestamp>
-		<secretData type="json string" mode="encrypted in aes" >
-			<phone type="String" mode="transparent"/>
-			<passwd type="String" mode="transparent"/> 
-			<sex type="String" mode="transparent"/> 
-			<place type="String" mode="transparent"/> 
-			<birthday type="String" mode="transparent" format="YYYY-MM-DD"/> 
-			<nickname type="String" mode="transparent"/> 
-			<headerSalt type="String" mode="transparent"/> 
-		</secretData>
-		<key type="string" mode="encrypted in rsa" >user aes secret key</key>
+	<http-content type="json string" mode="transparent">
+		<requestJson type="json string" mode="transparent">
+			<timestamp type="string" mode="transparent">time</timestamp>
+			<secretData type="json string" mode="encrypted in aes">
+				<phone type="String" mode="transparent" />
+				<passwd type="String" mode="transparent" />
+				<sex type="String" mode="transparent" />
+				<place type="String" mode="transparent" />
+				<birthday type="String" mode="transparent" format="YYYY-MM-DD" />
+				<nickname type="String" mode="transparent" />
+				<headerSalt type="String" mode="transparent" />
+			</secretData>
+			<key type="string" mode="encrypted in rsa">user aes secret key</key>
+		</requestJson>
+		<fileName type="byte[]" mode="encrypted in aes" />
 	</http-content>
 </http-request>
