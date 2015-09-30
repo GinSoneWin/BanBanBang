@@ -10,13 +10,21 @@
 				<case value="0" info="success" />
 				<case value="-1" info="fail: info wrong" />
 			</result>
+			<portrait type="url string" mode="transparent">
+				<case value="portrait picture url" info="if login success"/>
+				<case value="" info="get empty string(not null) if login fail"/>
+			</portrait>
+			<nickname type="string" mode="transparent">
+				<case value="nickname string" info="if login success"/>
+				<case value="" info="get empty string(not null) if login fail"/>
+			</nickname>
 			<userid>
-				<case value="userid generated from server" info="get userid if rigist success"/>
-				<case value="" info="get empty string (not null) if rigist fail"/>
+				<case value="userid generated from server" info="get userid if login success"/>
+				<case value="" info="get empty string (not null) if login fail"/>
 			</userid>
 			<token mode="transparent" type="String">
-				<case value="token generated from server" info="get token if rigist success" />
-				<case value="" info="get empty string (not null) if rigist fail "/>
+				<case value="token generated from server" info="get token if login success" />
+				<case value="" info="get empty string (not null) if login fail "/>
 			</token>
 			<headerSalt mode="transparent" type="String"/>
 		</secretData>
