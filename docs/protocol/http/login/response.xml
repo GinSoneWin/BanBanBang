@@ -10,23 +10,51 @@
 				<case value="0" info="success" />
 				<case value="-1" info="fail: info wrong" />
 			</result>
-			<portrait type="url string" mode="transparent">
-				<case value="portrait picture url" info="if login success"/>
-				<case value="" info="get empty string(not null) if login fail"/>
-			</portrait>
-			<nickname type="string" mode="transparent">
-				<case value="nickname string" info="if login success"/>
-				<case value="" info="get empty string(not null) if login fail"/>
-			</nickname>
-			<userid>
-				<case value="userid generated from server" info="get userid if login success"/>
-				<case value="" info="get empty string (not null) if login fail"/>
+			<userid type="string" mode="transparent">
+				<case value="userid generated from server" info="get userid if login success" />
+				<case value="" info="get empty string (not null) if login fail" />
 			</userid>
+			<nickname type="string" mode="transparent">
+				<case value="nickname string" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" />
+			</nickname>
+			<sex type="string" mode="transparent">
+				<case value="user's sex" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</sex>
+			<birthday type="string ,format like YYYY-MM-DD" mode="transparent">
+				<case value="user's birthday" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</birthday>
 			<token mode="transparent" type="String">
 				<case value="token generated from server" info="get token if login success" />
-				<case value="" info="get empty string (not null) if login fail "/>
+				<case value="" info="get empty string (not null) if login fail " />
 			</token>
-			<headerSalt mode="transparent" type="String"/>
+			<portrait type="url string" mode="transparent">
+				<case value="portrait picture url" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" />
+			</portrait>
+			<major type="string" mode="transparent">
+				<case value="user's school major" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</major>
+			<university type="string" mode="transparent">
+				<case value="user's university" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</university>
+			<place type="string" mode="transparent">
+				<case value="user's live place" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</place>
+			<introduction type="string" mode="transparent">
+				<case value="user's self introduction" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</introduction>
+			<hobby type="json array string" mode="transparent">
+				<case value="user's hobby" info="if login success" />
+				<case value="" info="get empty string(not null) if login fail" " />
+			</hobby>
+			<headerSalt mode="transparent" type="String" />
 		</secretData>
 	</http-content>
 </http-response>

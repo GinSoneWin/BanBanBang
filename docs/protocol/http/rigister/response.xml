@@ -20,6 +20,10 @@
 				<case value="userid generated from server" info="get userid if rigist success"/>
 				<case value="" info="get empty string (not null) if rigist fail"/>
 			</userid>
+			<portrait mode="transparent" type="string">
+				<case value="the url of the portrait" info="get url if rigist and upload success"/>
+				<case value="" info="get empty string(not null) if upload fail"/>
+			</portrait>
 			<headerSalt mode="transparent" type="String"/>
 		</secretData>
 	</http-content>

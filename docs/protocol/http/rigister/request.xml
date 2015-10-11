@@ -18,7 +18,6 @@
 				<phone type="String" mode="transparent" />
 				<passwd type="String" mode="transparent" />
 				<sex type="String" mode="transparent" />
-				<place type="String" mode="transparent" />
 				<birthday type="String" mode="transparent" format="YYYY-MM-DD" />
 				<nickname type="String" mode="transparent" />
 				<headerSalt type="String" mode="transparent" />
