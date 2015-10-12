@@ -11,48 +11,37 @@
 				<case value="-1" info="fail: info wrong" />
 			</result>
 			<userid type="string" mode="transparent">
-				<case value="userid generated from server" info="get userid if login success" />
-				<case value="" info="get empty string (not null) if login fail" />
+				<case value="userid generated from server" info="get userid if rigist success" />
 			</userid>
 			<nickname type="string" mode="transparent">
-				<case value="nickname string" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" />
+				<case value="nickname string" info="if rigist success" />
 			</nickname>
 			<sex type="string" mode="transparent">
-				<case value="user's sex" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's sex" info="if rigist success" />
 			</sex>
 			<birthday type="string ,format like YYYY-MM-DD" mode="transparent">
-				<case value="user's birthday" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's birthday" info="if rigist success" />
 			</birthday>
 			<token mode="transparent" type="String">
-				<case value="token generated from server" info="get token if login success" />
-				<case value="" info="get empty string (not null) if login fail " />
+				<case value="token generated from server" info="get token if rigist success" />
 			</token>
-			<portrait type="url string" mode="transparent">
-				<case value="portrait picture url" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" />
-			</portrait>
+			<images mode="transparent" type="json array object">
+				url string array
+			</images>
 			<major type="string" mode="transparent">
-				<case value="user's school major" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's school major" info="if rigist success" />
 			</major>
 			<university type="string" mode="transparent">
-				<case value="user's university" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's university" info="if rigist success" />
 			</university>
 			<place type="string" mode="transparent">
-				<case value="user's live place" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's live place" info="if rigist success" />
 			</place>
 			<introduction type="string" mode="transparent">
-				<case value="user's self introduction" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's self introduction" info="if rigist success" />
 			</introduction>
 			<hobby type="json array string" mode="transparent">
-				<case value="user's hobby" info="if login success" />
-				<case value="" info="get empty string(not null) if login fail" " />
+				<case value="user's hobby" info="if rigist success" />
 			</hobby>
 			<headerSalt mode="transparent" type="String" />
 		</secretData>
