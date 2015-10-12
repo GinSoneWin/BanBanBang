@@ -1,30 +1,53 @@
 <http-response>
 	<http-header>
-		<signature mode="encrypted in pbkdf2" type="String">pbkdf2{(timestamp+phone+passwd(same as client)+httpcontentJsonString),headerSalt}
+		<signature mode="encrypted in pbkdf2" type="String">pbkdf2{(timestamp+phone+passwd(same
+			as client)+httpcontentJsonString),headerSalt}
 		</signature>
 	</http-header>
 	<http-content mode="transparent" type="json String">
-		<timestamp mode="transparent" type="string">String.valueOf(System.currentTimeMillis())</timestamp>
+		<timestamp mode="transparent" type="string">String.valueOf(System.currentTimeMillis())
+		</timestamp>
 		<secretData mode="encrypted in aes" type="json string">
 			<result mode="transparent" type="String">
-				<case value="0" info="success"/>
-				<case value="-1" info="fail:phone number has been used"/>
-				<case value="-2" info="fail:rigist error"/>
-				<case value="-3" info="fail:server exception"/>
+				<case value="0" info="success" />
+				<case value="-1" info="fail:phone number has been used" />
+				<case value="-2" info="fail:rigist error" />
+				<case value="-3" info="fail:server exception" />
 			</result>
+			<userid type="string" mode="transparent">
+				<case value="userid generated from server" info="get userid if rigist success" />
+			</userid>
+			<nickname type="string" mode="transparent">
+				<case value="nickname string" info="if rigist success" />
+			</nickname>
+			<sex type="string" mode="transparent">
+				<case value="user's sex" info="if rigist success" />
+			</sex>
+			<birthday type="string ,format like YYYY-MM-DD" mode="transparent">
+				<case value="user's birthday" info="if rigist success" />
+			</birthday>
 			<token mode="transparent" type="String">
 				<case value="token generated from server" info="get token if rigist success" />
-				<case value="" info="get empty string (not null) if rigist fail "/>
 			</token>
-			<userid mode="transparent" type="String">
-				<case value="userid generated from server" info="get userid if rigist success"/>
-				<case value="" info="get empty string (not null) if rigist fail"/>
-			</userid>
-			<portrait mode="transparent" type="string">
-				<case value="the url of the portrait" info="get url if rigist and upload success"/>
-				<case value="" info="get empty string(not null) if upload fail"/>
-			</portrait>
-			<headerSalt mode="transparent" type="String"/>
+			<images mode="transparent" type="json array object">
+				url string array
+			</images>
+			<major type="string" mode="transparent">
+				<case value="user's school major" info="if rigist success" />
+			</major>
+			<university type="string" mode="transparent">
+				<case value="user's university" info="if rigist success" />
+			</university>
+			<place type="string" mode="transparent">
+				<case value="user's live place" info="if rigist success" />
+			</place>
+			<introduction type="string" mode="transparent">
+				<case value="user's self introduction" info="if rigist success" />
+			</introduction>
+			<hobby type="json array string" mode="transparent">
+				<case value="user's hobby" info="if rigist success" />
+			</hobby>
+			<headerSalt mode="transparent" type="String" />
 		</secretData>
 	</http-content>
 </http-response>
